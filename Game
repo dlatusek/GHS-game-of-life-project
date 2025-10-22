@@ -8,50 +8,129 @@ public class Game {
   public static void main(String args[]) {
       Random rand = new Random();
       Scanner input = new Scanner(System.in);
-  int health = 100;
-  int money = 100;
-  int bank = 0;
-  int pay = 50;
+  
   int wealth = rand.nextInt(3);
   String name = "";
   System.out.println("What is your name?");
   name = input.nextLine();
+  player user = new player(name);
   System.out.println("Welcome to the game of life " + name);
   switch(wealth){
       case 0:
           System.out.println("You are born into a wealthy family!");
-          money = money + 100000;
+          user.setMoney(100000);
           break;
         case 1:
             System.out.println("You are born into a medium income family!");
-            money = money + 3000;
+            user.setMoney(3000);
           break;
         case 2:
             System.out.println("You are born into a poor family!");
           break;
         
   }
-  while(money>0){
-  System.out.println("you have " + money + "$");
+  while(user.getMoney()>0){
+      
+      
+      switch(user.getAge()%7){
+          case 0:
+              System.out.print("Sunday");
+              break;
+          case 1:
+              System.out.print("Monday");
+              break;    
+          case 2:
+              System.out.print("Tuesday");
+              break;
+        case 3:
+              System.out.print("Wednesday");
+              break;
+        case 4:
+              System.out.print("Thursday");
+              break;
+        case 5:
+              System.out.print("Friday");
+              break;
+        case 6:
+              System.out.print("Saturday");
+              break;
+      }
+      switch((user.getAge()/30)%12){
+          case 0:
+              System.out.println(" the " + user.getAge()%30+1 + " of January");
+              break;
+          case 1:
+              System.out.println(" the " + user.getAge()%30+1  + " of Februrary");
+              break;
+         case 2:
+              System.out.println(" the " + user.getAge()%30+1  + " of March");
+              break;
+        case 3:
+              System.out.println(" the " + user.getAge()%30+1  + " of April");
+              break;
+        case 4:
+              System.out.println(" the " + user.getAge()%30+1  + " of May");
+              break;
+        case 5:
+              System.out.println(" the " + user.getAge()%30+1  + " of June");
+              break;
+        case 6:
+              System.out.println(" the " + user.getAge()%30+1  + " of July");
+              break;
+        case 7:
+              System.out.println(" the " + user.getAge()%30+1  + " of August");
+              break;
+        case 8:
+              System.out.println(" the " + user.getAge()%30+1  + " of September");
+              break;
+        case 9:
+              System.out.println(" the " + user.getAge()%30+1  + " of October");
+              break;
+        case 10:
+              System.out.println(" the " + user.getAge()%30+1  + " of November");
+              break;
+        case 11:
+              System.out.println(" the " + user.getAge()%30+1  + " of December");
+              break;
+      }
+  System.out.println("you have " + user.getMoney() + "$");
   System.out.println("What would you like to do?");
   System.out.println("1 - go to work");
+  
+  System.out.println("# - buy");
+  System.out.println("1 - buy a car"); // needs to have money
+  System.out.println("1 - buy a house"); // needs to have money
+  System.out.println("# - buy insurance");
+  System.out.println("# - buy groceries");
+  
+  System.out.println("# - pay bills");
+  
+  System.out.println("# - selfcare");
+  System.out.println("# - exercise");
+  System.out.println("1 - eat"); // separate function for eat in home vs eat out
+  
+  System.out.println("# - check in");
+  System.out.println("# - check in with family & friends");
+  System.out.println("# - go to the doctor");
+  
   System.out.println("2 - end game");
   int choice = input.nextInt();
+  user.setAge(user.getAge()+1);
   switch(choice){
       case 1:
           System.out.println("you go to work");
-          money = money + pay;
+          user.setMoney(user.getMoney() + user.getIncome());
           break;
     case 2:
           System.out.println("give up");
-          money = -1;
+          user.setMoney(-1);
           break;
           
   }
   
   
   } // money is greater than 0
-  if(money <0){
+  if(user.getMoney() <0){
       System.out.println("You are bankrupt");
   }
   } // end main
