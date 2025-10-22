@@ -1,0 +1,22 @@
+public class player{
+
+//integers for stats
+private int money; // wealth on person
+private int age; // used to keep track of time
+private int income; // how much money is made by working
+private int kids;
+private int health; // a numerical representation of a persons physical well being
+private int mentalHealth; // a numerical representation of a persons psychological well being
+
+//integers for bills
+private int electricBill;
+private int gasBill;
+private int rent;
+private int trashBill;
+private int waterBill;
+private int groceryBill;
+
+
+
+
+}
