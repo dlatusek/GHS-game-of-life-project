@@ -1,6 +1,7 @@
 public class player{
 
 //integers for stats
+private String name;
 private int money; // wealth on person
 private int age; // used to keep track of time
 private int income; // how much money is made by working
@@ -15,8 +16,56 @@ private int rent;
 private int trashBill;
 private int waterBill;
 private int groceryBill;
+private int transportation;
 
-
+public player(String n){
+    name = n;
+    money = 0;
+    age = 0;
+    income = 0;
+    kids = 0;
+    health = 100;
+    mentalHealth = 100;
+}
+public String getName(){
+    return name;
+}
+public int getMoney(){
+    return money;
+}
+public void setMoney(int m){
+    money = m;
+}
+public int getAge(){
+    return age;
+}
+public void setAge(int a){
+    age = a;
+}
+public int getIncome(){
+    return income;
+}
+public void setIncome(int i){
+    income = i;
+}
+public int getKids(){
+    return kids;
+}
+public void setKids(int k){
+    kids = k;
+}
+public int getHealth(){
+    return health;
+}
+public void setHealth(int h){
+    health = h;
+}
+public int getMentalHealth(){
+    return mentalHealth;
+}
+public void setMentalHealth(int m){
+    mentalHealth = m;
+}
 
 
 }
